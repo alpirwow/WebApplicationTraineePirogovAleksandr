@@ -9,14 +9,17 @@ namespace WebApplicationTraineePirogovAleksandr.PresentationLayer.Controllers.Ne
 {
     public class NewtonController : Controller
     {        
-
-        // GET: Newton/Create
         public ActionResult Newton()
         {
             return View();
         }
-
-        // POST: Newton/Create
+        /// <summary>
+        /// Controller for receiving data from a Newton view
+        /// </summary>
+        /// <param name="numberUnderTheRoot">Number under the root. Type - String.</param>
+        /// <param name="rootLevel">Root level. Type - int.</param>
+        /// <param name="epsilon">Epsilon. Type - String.</param>
+        /// <returns>View("Newton") with ViewData["Head"]. ViewData["Head"] = result. Double result</returns>
         [HttpPost]
         public ActionResult Newton(string numberUnderTheRoot, int rootLevel, string epsilon)
         {
