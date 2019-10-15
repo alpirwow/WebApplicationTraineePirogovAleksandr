@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Newton";
+}
+
+<h2>Newton</h2>
+<div>
+    <h3>Newton</h3>
+    <form method="post" action="">
+
+        <p>Number Under The Root</p>
+        <input type="number" step="any" value="@ViewBag.numberUnderTheRoot" name="numberUnderTheRoot" />
+
+        <p>Root Level</p>
+        <input type="number" value="@ViewBag.rootLevel" name="rootLevel" />
+
+        <p>Epsilon</p>
+        <input type="number" step="any" value="@ViewBag.epsilon" name="epsilon" />
+
+        <input type="submit" value="Send" />
+
+    </form>
+    <h2>result = @ViewData["Head"]</h2>
+</div>
+
