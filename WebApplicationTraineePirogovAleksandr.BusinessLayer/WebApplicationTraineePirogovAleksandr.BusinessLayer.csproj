@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InterfacesAndService\Service\MainService.cs" />
+    <Compile Include="InterfacesAndService\Service\MathService\ConverterService.cs" />
     <Compile Include="InterfacesAndService\Service\MathService\NewtonService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using WebApplicationTraineePirogovAleksandr.BusinessLayer.InterfacesAndService.Service;
 
 namespace WebApplicationTraineePirogovAleksandr.PresentationLayer.Controllers.NewtonTask
 {
     public class NewtonController : Controller
-    {        
+    {
         public ActionResult Newton()
         {
             return View();

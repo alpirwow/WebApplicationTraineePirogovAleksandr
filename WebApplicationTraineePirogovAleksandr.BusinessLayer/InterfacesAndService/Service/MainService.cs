@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WebApplicationTraineePirogovAleksandr.BusinessLayer.InterfacesAndService.Service.MathService;
 
 namespace WebApplicationTraineePirogovAleksandr.BusinessLayer.InterfacesAndService.Service
@@ -32,6 +28,22 @@ namespace WebApplicationTraineePirogovAleksandr.BusinessLayer.InterfacesAndServi
             var result = NewtonService.NewtonMethod(numberUnderTheRootDouble, rootLevel, epsilonDouble);
             
             return result;
+        }
+        /// <summary>
+        /// A positive number is checked
+        /// </summary>
+        /// <param name="number">Input number for converter</param>
+        /// <returns>If true returns a binary string, if false then an error message</returns>
+        public static string ConverterMain(int number)
+        {
+            if (number > 0)
+            {
+                return ConverterService.ConverterPositiveNumberToBinary(number);
+            }
+            else
+            {
+                return "The entered number is less than or equal to zero";
+            }
         }
     }
 }

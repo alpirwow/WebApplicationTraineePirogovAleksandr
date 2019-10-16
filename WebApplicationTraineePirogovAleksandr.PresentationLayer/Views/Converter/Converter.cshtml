@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Converter";
+}
+
+<h2>Converter</h2>
+<div>
+    <h3>Converter</h3>
+    <form method="post" action="">
+
+        <p>Number for converter  to binary string</p>
+        <input type="number" step="any" value="@ViewBag.number" name="number" />
+
+        <input type="submit" value="Send" />
+
+    </form>
+    <h2>result = @ViewData["Head"]</h2>
+</div>
