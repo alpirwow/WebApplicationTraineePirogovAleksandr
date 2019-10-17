@@ -18,7 +18,6 @@ namespace WebApplicationTraineePirogovAleksandr.BusinessLayer.InterfacesAndServi
         public static string ConverterPositiveNumberToBinary(int number)
         {
             int numberNew = number;
-            double y = 0;
             int countIn = 0;
             List<int> numberRootList = new List<int>();
             string binaryStringAfterConvert = "";
@@ -27,7 +26,7 @@ namespace WebApplicationTraineePirogovAleksandr.BusinessLayer.InterfacesAndServi
             ///The cycle of finding powers of two
             while (numberNew > 1)
             {
-                y = numberNew;
+                double y = numberNew;
 
                 while (y > 1)
                 {
@@ -45,11 +44,24 @@ namespace WebApplicationTraineePirogovAleksandr.BusinessLayer.InterfacesAndServi
             {
                 numberRootList.Add(1);
             }
-
             ///Zero Fill Cycle
             for (int i = 0; i < numberRootList.Max(); i++)
             {
                 binaryStringAfterConvert += zeroForBinaryString;
+            }
+            
+            int binaryStringLength = binaryStringAfterConvert.Length;
+            ///Added zeros for better looking
+            while (binaryStringLength > 0)
+            {
+                binaryStringLength -= 4;
+                if(binaryStringLength < 0)
+                {
+                    for(int i = binaryStringLength; i != 0; i++)
+                    {
+                        binaryStringAfterConvert += zeroForBinaryString;
+                    }
+                }
             }
 
             StringBuilder binaryStringBuilderAfterConvert = new StringBuilder(binaryStringAfterConvert);
@@ -57,6 +69,13 @@ namespace WebApplicationTraineePirogovAleksandr.BusinessLayer.InterfacesAndServi
             foreach (var list in numberRootList)
             {
                 binaryStringBuilderAfterConvert.Replace(zeroForBinaryString, oneForBinaryString, binaryStringBuilderAfterConvert.Length - list, 1);
+            }
+
+            binaryStringLength = binaryStringBuilderAfterConvert.Length;
+            ///Added space for better looking
+            for (int i = binaryStringLength; i > 0; i -= 4)
+            {
+                binaryStringBuilderAfterConvert.Insert(i, " ");
             }
 
             binaryStringAfterConvert = binaryStringBuilderAfterConvert.ToString();
